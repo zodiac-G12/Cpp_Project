@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+#define N 8
+#define BLACK 1
+#define WHITE 0
+int i,j;
+int bord[N][N] = {{0}};
+
+int main(void){
+    // senkou koukou
+    for(i=0;i<2;i++){
+        for(j=0;j<2;j++) bord[N/2-i][N/2-j] = i==j ? BLACK : WHITE;
+    }
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf("%s ", bord[i][j] == BLACK ? "● " : "○ ");
+        }
+        puts("");
+    }
+    return 0;
+}
